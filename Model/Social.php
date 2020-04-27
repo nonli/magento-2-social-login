@@ -22,7 +22,7 @@
 namespace Mageplaza\SocialLogin\Model;
 
 use Exception;
-use Hybrid_Auth;
+use Hybridauth\Hybridauth as Hybrid_Auth;
 use Magento\Customer\Api\AccountManagementInterface;
 use Magento\Customer\Api\CustomerRepositoryInterface;
 use Magento\Customer\Api\Data\CustomerInterface;
@@ -313,7 +313,9 @@ class Social extends AbstractModel
             $adapter     = $auth->authenticate($apiName);
             $userProfile = $adapter->getUserProfile();
         } catch (Exception $e) {
-            $auth->logoutAllProviders();
+            //TODO this function does not exist anymore
+            // still on comment while finding out if we can replace / remove it
+            // $auth->logoutAllProviders();
             $auth        = new Hybrid_Auth($config);
             $adapter     = $auth->authenticate($apiName);
             $userProfile = $adapter->getUserProfile();
