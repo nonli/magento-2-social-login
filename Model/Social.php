@@ -304,7 +304,8 @@ class Social extends AbstractModel
                 $apiName => $this->getProviderData($apiName)
             ],
             'debug_mode' => false,
-            'debug_file' => BP . '/var/log/social.log'
+            'debug_file' => BP . '/var/log/social.log',
+            'callback' => $this->apiHelper->getAuthUrl(strtolower($apiName))
         ];
 
         $auth = new Hybrid_Auth($config);
