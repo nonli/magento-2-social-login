@@ -48,7 +48,7 @@ class Login extends AbstractSocial
 
             return;
         }
-        $type = $this->apiHelper->setType($this->getRequest()->getParam('type'));
+        $type = $this->apiHelper->setType(strtolower($this->getRequest()->getParam('type')));
         if (!$type) {
             $this->_forward('noroute');
 
