@@ -160,7 +160,6 @@ class Social extends AbstractModel
         $socialCustomer = $this->getCollection()
             ->addFieldToFilter('social_id', $identify)
             ->addFieldToFilter('type', $type)
-            ->addFieldToFilter('status', ['null' => 'true'])
             ->getFirstItem();
 
         if ($socialCustomer && $socialCustomer->getId()) {
@@ -305,7 +304,7 @@ class Social extends AbstractModel
             ],
             'debug_mode' => false,
             'debug_file' => BP . '/var/log/social.log',
-            'callback' => $this->apiHelper->getAuthUrl(strtolower($apiName))
+            'callback' => $this->apiHelper->getAuthUrl(strtolower($apiName), 'type', 'login')
         ];
 
         $auth = new Hybrid_Auth($config);
