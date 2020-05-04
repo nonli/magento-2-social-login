@@ -157,21 +157,23 @@ class Social extends HelperData
 
         return $appSecret;
     }
-
+    
     /**
      * @param $type
+     * @param $paramString
+     * @param $action
      *
      * @return mixed|string
      * @throws LocalizedException
      */
-    public function getAuthUrl($type)
+    public function getAuthUrl($type, $paramString = 'hauth_done', $action = 'callback')
     {
-        $authUrl = $this->getBaseAuthUrl();
+        $authUrl = $this->getBaseAuthUrl(null, $action);
 
         $type = $this->setType($type);
         switch ($type) {
             case 'Facebook':
-                $param = 'hauth_done=' . $type;
+                $param = $paramString . '=' . $type;
                 break;
             case 'Live':
                 $param = 'live.php';
@@ -181,7 +183,7 @@ class Social extends HelperData
             case 'Twitter':
                 return $authUrl;
             default:
-                $param = 'hauth.done=' . $type;
+                $param = $paramString . '=' . $type;
         }
         if ($type === 'Live') {
             return $authUrl . $param;
@@ -194,7 +196,7 @@ class Social extends HelperData
      * @return string
      * @throws LocalizedException
      */
-    public function getBaseAuthUrl($area = null)
+    public function getBaseAuthUrl($area = null, $action = 'callback')
     {
         $storeId = $this->getScopeUrl();
 
@@ -204,7 +206,7 @@ class Social extends HelperData
         $store = $this->storeManager->getStore($storeId);
 
         return $this->_getUrl(
-            'sociallogin/social/callback',
+            'sociallogin/social/' . $action,
             [
                 '_nosid'  => true,
                 '_scope'  => $storeId,
