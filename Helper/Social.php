@@ -92,10 +92,10 @@ class Social extends HelperData
             'Facebook'  => ['trustForwarded' => false, 'scope' => 'email, public_profile'],
             'Twitter'   => ['includeEmail' => true],
             'LinkedIn'  => ['fields' => ['id', 'first-name', 'last-name', 'email-address']],
-            'Vkontakte' => ['wrapper' => ['class' => Vkontakte::class]],
-            'Instagram' => ['wrapper' => ['class' => Instagram::class]],
-            'Github'    => ['wrapper' => ['class' => GitHub::class]],
-            'Amazon'    => ['wrapper' => ['class' => Amazon::class]],
+//            'Vkontakte' => ['wrapper' => ['class' => Vkontakte::class]],
+//            'Instagram' => ['wrapper' => ['class' => Instagram::class]],
+//            'Github'    => ['wrapper' => ['class' => GitHub::class]],
+//            'Amazon'    => ['wrapper' => ['class' => Amazon::class]],
             'Google'    => ['scope' => 'profile email']
         ];
 
