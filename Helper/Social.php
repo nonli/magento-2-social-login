@@ -25,10 +25,10 @@ use Magento\Framework\Exception\LocalizedException;
 use Magento\Store\Model\ScopeInterface;
 use Magento\Store\Model\Store;
 use Mageplaza\SocialLogin\Helper\Data as HelperData;
-use Mageplaza\SocialLogin\Model\Providers\Amazon;
-use Mageplaza\SocialLogin\Model\Providers\GitHub;
-use Mageplaza\SocialLogin\Model\Providers\Instagram;
-use Mageplaza\SocialLogin\Model\Providers\Vkontakte;
+//use Mageplaza\SocialLogin\Model\Providers\Amazon;
+//use Mageplaza\SocialLogin\Model\Providers\GitHub;
+//use Mageplaza\SocialLogin\Model\Providers\Instagram;
+//use Mageplaza\SocialLogin\Model\Providers\Vkontakte;
 
 /**
  * Class Social
